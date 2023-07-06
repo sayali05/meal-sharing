@@ -24,6 +24,8 @@ app.use(cors());
 
 router.use("/meals", mealsRouter);
 
+//nodejs-week2
+router.use("/reservations", reservationRouter);
 
 // Route to get future meals sorted by ID
 app.get("/future-meals", async (req, res) => {
@@ -32,7 +34,7 @@ app.get("/future-meals", async (req, res) => {
       .select()
       .from("meal")
       .where("when", ">", knex.fn.now());
-      console.log(meals)
+
     res.status(200).json(meals);
   } catch (error) {
     res.status(500).json("500. Internal Server Error");
@@ -97,7 +99,7 @@ app.get("/last-meal", async (req, res) => {
 if (process.env.API_PATH) {
   app.use(process.env.API_PATH, router);
 } else {
-  throw "API_PATH is not set. Remember to set it in your .env file"
+  throw "API_PATH is not set. Remember to set it in your .env file";
 }
 
 // for the frontend. Will first be covered in the react class
