@@ -8,6 +8,9 @@ const buildPath = path.join(__dirname, "../../dist");
 const port = process.env.PORT || 3000;
 const cors = require("cors");
 
+
+const knex = require("./database");
+
 // For week4 no need to look into this!
 // Serve the built client html
 app.use(express.static(buildPath));
@@ -21,6 +24,7 @@ app.use(cors());
 
 router.use("/meals", mealsRouter);
 
+//nodejs-week2
 router.use("/reservations", reservationRouter);
 
 // Route to get future meals sorted by ID
@@ -30,12 +34,13 @@ app.get("/future-meals", async (req, res) => {
       .select()
       .from("meal")
       .where("when", ">", knex.fn.now());
-    console.log(meals);
+
     res.status(200).json(meals);
   } catch (error) {
     res.status(500).json("500. Internal Server Error");
   }
 });
+
 
 // Respond with all meals in the past (relative to the when datetime)
 app.get("/past-meals", async (req, res) => {
@@ -89,6 +94,7 @@ app.get("/last-meal", async (req, res) => {
     res.status(500).json("500. Internal Server Error");
   }
 });
+
 
 if (process.env.API_PATH) {
   app.use(process.env.API_PATH, router);
