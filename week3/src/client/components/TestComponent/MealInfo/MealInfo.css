@@ -1,0 +1,12 @@
+.meal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 10px;
+}
