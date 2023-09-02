@@ -1,0 +1,53 @@
+.review-container{
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+
+}
+.review-container h2 {
+margin-top:12px;
+
+}
+.review-form {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+    gap:10px;
+}
+.select-style{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    width:100%;
+}
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    width: 100%;
+  }
+
+  input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .btn-style {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .select-style::placeholder,
+textarea::placeholder,
+input[type="number"]::placeholder {
+  color: #555; 
+  font-size: 14px; 
+}
+label {
+    font-size: 14px;
+}

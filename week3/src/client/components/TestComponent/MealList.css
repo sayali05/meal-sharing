@@ -1,0 +1,26 @@
+.meal-list {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+  }
+  .title {
+    font-family: var(--font-logo);
+    color: var(--theme-color);
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: large;
+  }
+  .meal-card {
+    margin: 0 auto;
+    max-width: 1170px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Distributes items with space between them */
+  
+    padding: 2rem; /* Add padding to create space around the container */
+  }
+  @media (max-width: 768px) {
+    .meal-card {
+      width: 100%; /* Cards take up full width on smaller screens */
+    }
+  }
